@@ -5,3 +5,5 @@ O que eu vou aprender na Trybe:
 - Git
 
 teste teclado
+- HTML
+- CSS
