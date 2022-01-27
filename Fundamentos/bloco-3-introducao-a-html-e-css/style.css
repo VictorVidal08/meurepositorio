@@ -1,0 +1,28 @@
+body {
+    font-size: 16px;
+    background-color: gray;
+}
+h1 {
+    color: orange;
+    font-size: 65px;
+    font-family: sans-serif;
+}
+ul {
+    background-color: palegreen;
+}
+.teste{
+    background-color: pink;
+}
+p {
+    font-weight: 600;
+    font-size: 3em;
+}
+.amarelo{
+    background-color: yellow;
+}
+.vermelho{
+    background-color: red;
+}
+.marrom{
+    background-color: brown;
+}
