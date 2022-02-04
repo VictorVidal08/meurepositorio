@@ -1,0 +1,63 @@
+algoritmos exercicios do dia anterior;
+
+exercicio 1:
+percorra o array (for)
+imprima (console.log)
+
+exercicio 2;
+
+variavel de armazenamento soma;
+for para passar por todos os valore do array
+console.log pra imprimir
+
+execicio 3
+
+variavel de armazenamento soma;
+for para passar por todos os valores do array
+calculo da média dividindo a soma pelo tamanho do array
+console.log pra imprimir
+
+exercicio 4:
+
+variavel de armazenamento soma;
+for para passar por todos os valores do array
+calculo da média dividindo a soma pelo tamanho do array
+estruturas de condicionais 
+console.log pra imprimir de acordo com as condicionais
+
+exercicio 5:
+
+variavel de armazenamento do maior valor;
+for para passar por todos os valores do array
+verificação do maior valor dentro da estrutura de repetição utilizando uma estrutura condicional 
+console.log pra imprimir de acordo com as condicionais
+
+exercicio 6:
+
+variavel de armazenamento para contagem dos valores impares;
+for para passar por todos os valores do array
+verificação de valor impar dentro da estrutura de repetição utilizando uma estrutura condicional 
+console.log pra imprimir de acordo com as condicionais
+
+exercicio 7:
+
+variavel de armazenamento do menor valor;
+for para passar por todos os valores do array
+verificação do menor valor dentro da estrutura de repetição utilizando uma estrutura condicional 
+console.log pra imprimir de acordo com as condicionais
+
+exercicio 8:
+
+cria um array vazio;
+utiliza a estrutura de repetição até 25
+adiciona um valor a cada ciclo de repetição
+imprime com console.log o array com os valores
+
+exercicio 9:
+
+cria um array vazio;
+utiliza a estrutura de repetição até 25
+adiciona um valor a cada ciclo de repetição
+pega os arrays com os numeros adicionados,
+bota numa estrutura de repetição dividindo cada valor por 2
+imprime com console.log o array com os valores divididos por 2

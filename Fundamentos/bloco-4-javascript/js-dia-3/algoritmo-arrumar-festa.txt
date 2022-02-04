@@ -1,0 +1,26 @@
+Descobrir o horario da festa
+descobrir o clima
+descobrir o tipo de festa
+
+Tomar banho:
+pega toalha,
+tira roupa.
+entra no box
+abre o chuveiro
+controla a temperatura do chuveiro
+esfregar e enxaguar cabeça
+esfregar e enxaguar corpo
+secar e enrolar na toalha
+sair do box
+pentear cabelo
+caminhar até o quarto
+
+
+abrir guarda roupas,
+de acordo com as infos da festa (horario, tipo e clima)
+escolher camisa,
+escolher calça
+escoler tenis
+
+passar perfume
+fechar porta do guarda roupa
