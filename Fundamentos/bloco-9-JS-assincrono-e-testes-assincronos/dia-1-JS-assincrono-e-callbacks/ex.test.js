@@ -1,5 +1,3 @@
-// não funcionou porque o arquivo não é . test.js
-
 test('Não deveria passar!', (done) => {
     setTimeout(() => {
       try {
