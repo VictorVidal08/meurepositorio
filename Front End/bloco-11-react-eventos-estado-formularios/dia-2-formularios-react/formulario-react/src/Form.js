@@ -1,61 +1,107 @@
-import React, { Component } from 'react'
-// import './Form.css'
+import React, { Component } from 'react';
 
 class Form extends Component {
   constructor() {
     super();
 
-    this.handleChange = this.handleChange.bind(this);
-
     this.state = {
-      estadoFavorito: '',
+      email: '',
+      name: '',
+      idade: 0,
+      anecdote: '',
+      checkbox: false,
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
-
-  handleChange(event) {
+  handleChange({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+  
     this.setState({
-      estadoFavorito: event.target.value,
+      [name]: value,
     });
   }
 
   render() {
-      const { estadoFavorito } = this.state;
+    const { email, name, idade, anecdote, checkbox } = this.state;
+
     return (
       <div>
-        <h1>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h1>
+        <h1>Estados e React </h1>
         <form className="form">
-          <label>
-            Diga qual o seu Estado favorito! De React ou do Brasil, você decide! =)
-              <textarea 
-                name="estadoFavorito" 
-                value={this.state.estadoFavorito} 
-                onChange={this.handleChange} 
-              />
-          </label>
-          <label>
-          Idade:
-            <select 
-                type="number"
-                name="idade"
-                defaultValue= ""
-            >
-            <option>Selecione</option>
-            <option>Maior que 18</option>
-            <option>Menor de 18</option>
-            </select>
-        </label>
-          
-         <label>
-             Selecione para confirmar sua presença.
-          <input
-            type="checkbox"
-            name="vaiComparecer"
-          />
-             </label> 
-          
+
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+
+            <label htmlFor="name">
+                Nome:
+                <input
+                id="name"
+                name="name"
+                type="text"
+                onChange={ this.handleChange }
+                value={ name }
+                />
+            </label>
+
+            <label htmlFor="email">
+                Email:
+                <input
+                id="email"
+                name="email"
+                type="email"
+                onChange={ this.handleChange }
+                value={ email }
+                />
+            </label>
+
+            <label htmlFor="age">
+                Idade:
+                <select
+                id="age"
+                name="age"
+                defaultValue=""
+                onChange={ this.handleChange }
+                value={ idade }
+                >
+                <option value="">Selecione</option>
+                <option value="adult">Maior que 18</option>
+                <option value="underage">Menor que 18</option>
+                </select>
+            </label>
+          </fieldset>
+          <fieldset>
+              <legend>Escreva o que quiser</legend>
+
+            <label htmlFor="anecdote">
+                TextArea:
+                <textarea 
+                id="anecdote" 
+                name="anecdote" 
+                onChange={ this.handleChange }
+                value={ anecdote }
+                />
+                
+            </label>
+          </fieldset>
+
+          <fieldset>
+              <legend>Marque aqui se quiser!</legend>
+            <label htmlFor="checkbox">
+                Checkbox:
+                <input
+                id="checkbox"
+                name="checkbox"
+                type="checkbox"
+                onChange={ this.handleChange }
+                value={ checkbox }
+                />
+            </label>
+          </fieldset>
+
         </form>
-        {console.log(this.state)}
       </div>
     );
   }
