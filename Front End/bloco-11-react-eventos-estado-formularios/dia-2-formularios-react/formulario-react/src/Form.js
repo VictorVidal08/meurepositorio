@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import DataFieldset from './DataFieldset';
+import PersonalInfoFieldset from './PersonalInfoFieldset';
 
 class Form extends Component {
   constructor() {
@@ -10,9 +12,27 @@ class Form extends Component {
       idade: 0,
       anecdote: '',
       checkbox: false,
+      formularioComErros: true,
     };
 
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleError() {
+    const { name, idade, anecdote, checkbox } = this.state;
+
+    const errorCases = [
+      !name.length,
+      !idade.length,
+      !anecdote.length,
+      !checkbox,
+    ];
+
+    const formularioPreenchido = errorCases.every((error) => error !== true);
+
+    this.setState({
+      formularioComErros: !formularioPreenchido,
+    });
   }
 
   handleChange({ target }) {
@@ -21,7 +41,7 @@ class Form extends Component {
   
     this.setState({
       [name]: value,
-    });
+    }, () => { this.handleError(); });
   }
 
   render() {
@@ -31,77 +51,24 @@ class Form extends Component {
       <div>
         <h1>Estados e React </h1>
         <form className="form">
+          <PersonalInfoFieldset 
+          nameValue={ name }
+          emailValue={ email }
+          idadeValue={ idade }
+          handleChange={ this.handleChange}
+          />
 
-        <fieldset>
-            <legend>Informações Pessoais</legend>
-
-            <label htmlFor="name">
-                Nome:
-                <input
-                id="name"
-                name="name"
-                type="text"
-                onChange={ this.handleChange }
-                value={ name }
-                />
-            </label>
-
-            <label htmlFor="email">
-                Email:
-                <input
-                id="email"
-                name="email"
-                type="email"
-                onChange={ this.handleChange }
-                value={ email }
-                />
-            </label>
-
-            <label htmlFor="age">
-                Idade:
-                <select
-                id="age"
-                name="age"
-                defaultValue=""
-                onChange={ this.handleChange }
-                value={ idade }
-                >
-                <option value="">Selecione</option>
-                <option value="adult">Maior que 18</option>
-                <option value="underage">Menor que 18</option>
-                </select>
-            </label>
-          </fieldset>
-          <fieldset>
-              <legend>Escreva o que quiser</legend>
-
-            <label htmlFor="anecdote">
-                TextArea:
-                <textarea 
-                id="anecdote" 
-                name="anecdote" 
-                onChange={ this.handleChange }
-                value={ anecdote }
-                />
-                
-            </label>
-          </fieldset>
-
-          <fieldset>
-              <legend>Marque aqui se quiser!</legend>
-            <label htmlFor="checkbox">
-                Checkbox:
-                <input
-                id="checkbox"
-                name="checkbox"
-                type="checkbox"
-                onChange={ this.handleChange }
-                value={ checkbox }
-                />
-            </label>
-          </fieldset>
+          <DataFieldset 
+          anecdoteValue={ anecdote }
+          checkboxValue={ checkbox }
+          handleChange={this.handleChange}
+          />
 
         </form>
+        { formularioComErros 
+        ? <span style={ {color: 'red'} }>Preencha todos os campos</span>
+        : <span style={ {color: 'green'} }>O formulario foi preenchido corretamente</span>}
+
       </div>
     );
   }

@@ -1,10 +1,10 @@
+// realizado com ajuda do gabarito;
 import './App.css';
 import Form from './Form';
 
 function App() {
   return (
     <div>
-      teste
       <Form />
     </div>
   );
