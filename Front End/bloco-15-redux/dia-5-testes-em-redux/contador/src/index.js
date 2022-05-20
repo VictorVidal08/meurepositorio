@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import App from './App';
 
-// Store provido pela nossa aplicação. Nos testes, precisamos prover um novo store para podermos controlá-lo
+// Store provido pela aplicação. Nos testes, precisamos prover um novo store para podermos controlá-lo
 
 ReactDOM.render(
   <React.StrictMode>
